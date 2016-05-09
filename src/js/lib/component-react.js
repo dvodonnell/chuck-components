@@ -1,5 +1,5 @@
-var React = __dep.use('vendor.react'),
-    ReactDom = __dep.use('vendor.reactDOM');
+import React from 'vendor.react';
+import ReactDom from 'vendor.reactDom';
 
 export default {
 
