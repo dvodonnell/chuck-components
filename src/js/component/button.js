@@ -1,4 +1,4 @@
-var Component = __dep.use('lib.component');
+import Component from 'lib.component';
 
 export default Component.createClass({
 

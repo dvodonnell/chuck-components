@@ -1,6 +1,6 @@
-var Component = __dep.use('lib.component'),
-    Input = __dep.use('component.input'),
-    InputFile = __dep.use('component.input.file');
+import Component from 'lib.component';
+import Input from './input.js';
+import InputFile from './input/file.js';
 
 export default Component.createClass({
 

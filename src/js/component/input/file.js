@@ -1,5 +1,5 @@
-var Component = __dep.use('lib.component'),
-    Input = __dep.use('component.input');
+import Component from 'lib.component';
+import Input from './../input.js';
 
 export default Component.createClass({
 

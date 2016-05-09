@@ -1,5 +1,5 @@
-var Component = __dep.use('lib.component'),
-    TableHeader = __dep.use('component.tableHeader');
+import Component from 'lib.component';
+import TableHeader from './table-header.js';
 
 export default Component.createClass({
 

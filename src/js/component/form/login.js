@@ -1,9 +1,9 @@
-var Component = __dep.use('lib.component'),
-    InputGroup = __dep.use('component.inputGroup'),
-    Button = __dep.use('component.button'),
-    Block = __dep.use('component.block'),
-    Link = __dep.use('component.link'),
-    Form = __dep.use('component.form');
+import Component from 'lib.component';
+import InputGroup from './../input-group.js';
+import Button from './../button.js';
+import Block from './../block.js';
+import Link from './../link.js';
+import Form from './../form.js';
 
 export default Component.createClass({
 
