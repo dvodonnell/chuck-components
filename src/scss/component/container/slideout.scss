@@ -1,0 +1,23 @@
+$defaultSlideOutWidth : 300px;
+
+.containerSlideout {
+  position:fixed;
+  transition-property:left, right;
+  transition-duration : 0.5s;
+  width:$defaultSlideOutWidth;
+  background-color:rgba(#eaeaea, 0.5);
+  &.fromLeft {
+    left:-$defaultSlideOutWidth;
+    border-right:1px solid #ccc;
+    &.isOpen {
+      left:0;
+    }
+  }
+  &.fromRight {
+    right:-$defaultSlideOutWidth;
+    border-left:1px solid #ccc;
+    &.isOpen {
+      right:0;
+    }
+  }
+}

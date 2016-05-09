@@ -1,0 +1,12 @@
+.containerTopbar {
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  min-height:54px;
+  border-bottom:1px solid #ccc;
+  z-index:9999;
+  .userArea {
+    margin:10px;
+  }
+}

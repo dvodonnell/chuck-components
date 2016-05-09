@@ -1,0 +1,13 @@
+.iconblock {
+  margin:20px;
+  text-align:center;
+  i {
+    font-size:40px;
+  }
+  &.huge {
+    margin:80px;
+    i {
+      font-size:100px;
+    }
+  }
+}

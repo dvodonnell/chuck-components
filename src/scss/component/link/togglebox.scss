@@ -1,0 +1,33 @@
+.toggleBox {
+
+  border:2px solid #eaeaea;
+  padding:10px;
+  margin:10px 0;
+
+  i {
+    color:#ccc;
+    font-size:21px;
+    float:left;
+    margin-right:10px;
+  }
+
+  &.isSelected {
+
+    border:2px solid green;
+    background-color:#daf0d8;
+
+    i {
+      color : green;
+    }
+
+    &:hover {
+      background-color:#daf0d8;
+    }
+
+  }
+
+  &:hover {
+    background-color:#f0f0f0;
+  }
+
+}

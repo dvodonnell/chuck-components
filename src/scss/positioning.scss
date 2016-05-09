@@ -1,0 +1,79 @@
+$smallSpacing : 10px;
+$standardSpacing : 20px;
+$bigSpacing : 40px;
+$hugeSpacing : 60px;
+
+.inline {
+  display:inline-block;
+}
+
+.fullWidth {
+  width:100%;
+}
+
+.floatRight {
+  float:right;
+}
+
+.floatLeft {
+  float:left;
+}
+
+.blockCentred {
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.focusWidth {
+  min-width:600px;
+  max-width:100%;
+  margin:auto;
+}
+
+.textCentre {
+  text-align:center;
+}
+
+.block {
+  display:block;
+}
+
+.noMargin {
+  margin:0;
+}
+
+.marginBottomStandard {
+  margin-bottom:$standardSpacing;
+}
+
+.marginBottomBig {
+  margin-bottom:$bigSpacing;
+}
+
+.marginTopSmall {
+  margin-top:$smallSpacing;
+}
+
+.marginTopStandard {
+  margin-top:$standardSpacing;
+}
+
+.marginTopBig {
+  margin-top:$bigSpacing;
+}
+
+.marginTopHuge {
+  margin-top:$hugeSpacing;
+}
+
+.marginRightStandard {
+  margin-right:$standardSpacing;
+}
+
+.paddingStandard {
+  padding:$standardSpacing;
+}
+
+.paddingTopHuge {
+  padding-top:$hugeSpacing;
+}

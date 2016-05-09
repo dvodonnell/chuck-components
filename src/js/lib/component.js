@@ -1,3 +1,6 @@
+var React = __dep.use('vendor.react'),
+    ReactDom = __dep.use('vendor.reactDOM');
+
 export default {
 
     createClass : function(def) {
@@ -30,10 +33,7 @@ export default {
 
             return function(props, children) {
                 if (!props.key) {
-                    props.key = Math.random() * (100000000 - 1000000) + 1000000;
-                }
-                if (props.onsubmit) {
-                    props['onSubmit'] = props.onsubmit;
+                    //props.key = Math.random() * (100000000 - 1000000) + 1000000;
                 }
                 return React.createElement(_tagName, props, children);
             };
