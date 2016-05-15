@@ -4,6 +4,7 @@ import Button from './../button.js';
 import Block from './../block.js';
 import Link from './../link.js';
 import Form from './../form.js';
+import Grid from './../grid.js';
 
 var ComponentFormRegister = Component.createClass({
 
@@ -12,7 +13,7 @@ var ComponentFormRegister = Component.createClass({
         var elements = [];
 
         elements.push(
-            InputGroupComponent(
+            InputGroup(
                 {
                     key : 'username',
                     name : 'username',
@@ -21,7 +22,7 @@ var ComponentFormRegister = Component.createClass({
                     placeholder : "Email"
                 }
             ),
-            InputGroupComponent(
+            InputGroup(
                 {
                     type : 'password',
                     label : '',
@@ -30,7 +31,7 @@ var ComponentFormRegister = Component.createClass({
                     placeholder : "Password"
                 }
             ),
-            InputGroupComponent(
+            InputGroup(
                 {
                     type : 'password',
                     label : '',
@@ -39,12 +40,12 @@ var ComponentFormRegister = Component.createClass({
                     placeholder : "Confirm password"
                 }
             ),
-            GridComponent(
+            Grid(
                 {
                     items : [
                         [
                             {
-                                item : [ButtonComponent(
+                                item : [Button(
                                     {
                                         key : 'returnToLogin',
                                         label : 'Log In',
@@ -56,7 +57,7 @@ var ComponentFormRegister = Component.createClass({
                                 }
                             },
                             {
-                                item : [ButtonComponent(
+                                item : [Button(
                                     {
                                         key : 'submit',
                                         label : 'Sign up'
@@ -72,7 +73,7 @@ var ComponentFormRegister = Component.createClass({
             )
         );
 
-        return FormComponent(
+        return Form(
             {
                 className : 'formRegister textCentre',
                 service : {
