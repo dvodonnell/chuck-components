@@ -4,7 +4,7 @@ export default Component.createClass({
 
     render : function(attrs, children) {
 
-        var className = 'gbContainer';
+        var className = 'chuck-container';
 
         if (attrs) {
             if (attrs.fluid) {
