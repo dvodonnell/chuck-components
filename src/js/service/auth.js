@@ -1,6 +1,6 @@
 export default {
 
-    checkToken: function (envService, store, api, appNamespace, callback) {
+    checkToken: function (envService, store, api, appNamespace, cb) {
 
         var userToken = envService.storage.get(appNamespace + 'UserToken');
 
