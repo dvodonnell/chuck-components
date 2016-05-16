@@ -1,5 +1,5 @@
-var LibStore = function(){
-    this._store = {};
+var LibStore = function(initialState){
+    this._store = initialState || {};
     this._subscribers = [];
 };
 
