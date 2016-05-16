@@ -1,6 +1,6 @@
 export default {
 
-    checkToken: function (envService, store, api, appNamespace) {
+    checkToken: function (envService, store, api, appNamespace, callback) {
 
         var userToken = envService.storage.get(appNamespace + 'UserToken');
 
@@ -10,6 +10,9 @@ export default {
             waitForValidate.done(function (r) {
                 if (r.success) {
                     store.alter('user.current', {username : r.data.username});
+                }
+                if (cb) {
+                    cb();
                 }
             });
         }
