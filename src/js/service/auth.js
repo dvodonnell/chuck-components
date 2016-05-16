@@ -50,6 +50,7 @@ export default {
 
             waitForRegistrationConfirmation.done(function(r) {
                 if (r.success) {
+                    store.alter('user.registering', null, false);
                     store.alter('user.current', {username : r.data.email});
                     api.setAccessToken(r.data.token);
                     envService.storage.set(appNamespace + 'UserToken', r.data.token);

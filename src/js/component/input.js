@@ -7,7 +7,7 @@ export default Component.createClass({
         var pars = {
             className : 'form-control',
             type : attrs.type || 'text',
-            value: (attrs.state && attrs.state.value) ? attrs.state.value : null,
+            value: (attrs.state && attrs.state.value) ? attrs.state.value : '',
             name : attrs.name || '',
             placeholder : attrs.placeholder || ''
         };
