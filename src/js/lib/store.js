@@ -10,7 +10,6 @@ LibStore.prototype = {
     },
 
     alter : function(key, val, ignoreTrigger) {
-        console.log('altering ' + key);
         var parts = key.split('.'),
             rObj = this._store,
             parentObj = null;
