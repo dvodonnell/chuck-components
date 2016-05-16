@@ -20,16 +20,20 @@ export default {
 
         var state = store.getState();
 
-        if (state.user && state.user.authenticating && !state.user.token) {
+        if (state.user && state.user.requestingAuthentication && !state.user.token) {
 
             //login attempt
 
             var waitForToken = api.getToken(
-                state.user.authenticating.username,
-                state.user.authenticating.password
+                state.user.requestingAuthentication.username,
+                state.user.requestingAuthentication.password
             );
 
+            store.alter('user.authenticating', state.user.requestingAuthentication, true);
+            store.alter('user.requestingAuthentication', null, true);
+
             waitForToken.done(function (r) {
+                store.alter('user.authenticating', null, true);
                 if (r.success) {
                     store.alter('user.current', {username : r.data.email});
                     api.setAccessToken(r.data.token);
@@ -50,7 +54,7 @@ export default {
 
             waitForRegistrationConfirmation.done(function(r) {
                 if (r.success) {
-                    store.alter('user.registering', null, false);
+                    store.alter('user.registering', null, true);
                     store.alter('user.current', {username : r.data.email});
                     api.setAccessToken(r.data.token);
                     envService.storage.set(appNamespace + 'UserToken', r.data.token);
@@ -62,7 +66,7 @@ export default {
     },
 
     doLogin : function(store, username, password) {
-        store.alter('user.authenticating', {username : username, password : password});
+        store.alter('user.requestingAuthentication', {username : username, password : password});
     },
 
     doLogout : function(store, envService, appNamespace) {
