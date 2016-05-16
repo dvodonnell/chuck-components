@@ -4,8 +4,6 @@ export default Component.createClass({
 
     render : function(attrs, children) {
 
-        console.log(attrs);
-
         var items = [];
 
         if (attrs.items) {

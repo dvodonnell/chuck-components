@@ -9,11 +9,10 @@ export default Component.createClass({
 
         cN += ' list-inline';
 
-        attrs['className'] = cN;
-
-        console.log(attrs);
-
-        return List(attrs);
+        return List({
+            className : cN,
+            items : attrs.items
+        });
 
     }
 
