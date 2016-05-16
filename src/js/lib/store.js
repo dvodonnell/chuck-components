@@ -1,5 +1,5 @@
-var LibStore = function(){
-    this._store = {};
+var LibStore = function(initialState){
+    this._store = initialState || {};
     this._subscribers = [];
 };
 
@@ -28,9 +28,9 @@ LibStore.prototype = {
         }
     },
 
-    alterBatch : function(keyVals) {
+    alterBatch : function(keyVals, parentKey) {
         for (key in keyVals) {
-            this.alter(key, keyVals[key], true);
+            this.alter(((parentKey) ? parentKey + '.' + key : key), keyVals[key], true);
         }
         this._trigger();
     },

@@ -5,6 +5,10 @@ export default {
 
     createClass : function(def) {
 
+        if (!def.render) {
+            console.log('Component definition missing render()');
+        }
+
         var cl = (function(_def){
             return React.createClass({
                 render : function() {

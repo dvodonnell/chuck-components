@@ -1,5 +1,5 @@
-var Component = __dep.use('lib.component'),
-    Container = __dep.use('component.container');
+import Component from 'lib.component';
+import Container from './../container.js';
 
 export default Component.createClass({
 
