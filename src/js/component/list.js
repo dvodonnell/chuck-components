@@ -12,7 +12,9 @@ export default Component.createClass({
             }
         }
 
-        return Component.DOM("ul")(attrs, items);
+        return Component.DOM("ul")({
+            className : attrs.className
+        }, items);
 
     }
 
