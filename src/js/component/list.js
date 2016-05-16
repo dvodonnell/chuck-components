@@ -4,6 +4,8 @@ export default Component.createClass({
 
     render : function(attrs, children) {
 
+        console.log(attrs);
+
         var items = [];
 
         if (attrs.items) {
@@ -12,9 +14,7 @@ export default Component.createClass({
             }
         }
 
-        return Component.DOM("ul")({
-            className : attrs.className
-        }, items);
+        return Component.DOM("ul")(attrs, items);
 
     }
 

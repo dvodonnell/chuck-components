@@ -11,6 +11,8 @@ export default Component.createClass({
 
         attrs['className'] = cN;
 
+        console.log(attrs);
+
         return List(attrs);
 
     }
