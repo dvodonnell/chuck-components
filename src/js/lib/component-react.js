@@ -14,7 +14,10 @@ export default {
                 render : function() {
                     var self = this;
                     return _def.render.apply({
-                        setState : self.setState
+                        state : {},
+                        setState : function(state) {
+                            this.state = state;
+                        }
                     }, [this.props, this.props.children, this.state]);
                 }
             };
