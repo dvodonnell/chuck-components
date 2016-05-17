@@ -17,7 +17,9 @@ export default Component.createClass({
         };
 
         if (attrs.onClick) {
-            props.onClick = attrs.onClick;
+            props.onClick = function() {
+                attrs.onClick(attrs.id || attrs.rowNum);
+            };
             props.className += ' clickable';
         }
 
