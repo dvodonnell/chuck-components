@@ -12,7 +12,8 @@ export default Component.createClass({
 
     render : function(attrs, children, state) {
 
-        console.log('rendering...', state);
+        console.log('inner rendering...', state);
+        console.log('inner rendering var...', this.state);
 
         var self = this;
 
