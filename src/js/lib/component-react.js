@@ -12,7 +12,10 @@ export default {
         var cl = (function(_def){
             var classDef = {
                 render : function() {
-                    return _def.render(this.props, this.props.children, this.state);
+                    var self = this;
+                    return _def.render(this.props, this.props.children, this.state).apply({
+                        setState : self.setState
+                    });
                 }
             };
             if (_def.getInitialState) {
