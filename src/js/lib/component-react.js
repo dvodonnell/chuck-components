@@ -12,13 +12,7 @@ export default {
         var cl = (function(_def){
             var classDef = {
                 render : function() {
-                    var self = this;
-                    var innerContext = {
-                        setState : function(state) {
-                            _def.render.apply(innerContext, [self.props, self.props.children, state]);
-                        }
-                    };
-                    return _def.render.apply(innerContext, [this.props, this.props.children, this.state]);
+                    return _def.render.apply(this, [this.props, this.props.children, this.state]);
                 }
             };
             if (_def.getInitialState) {
