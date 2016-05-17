@@ -12,9 +12,15 @@ export default Component.createClass({
             }, attrs.cols[i].content || []));
         }
 
-        return Component.DOM("tr")({
+        var props = {
             className : 'table-row' + ((attrs.className) ? ' ' + attrs.className : '')
-        }, (cols.length > 0)  ? cols : []);
+        };
+
+        if (attrs.onClick) {
+            props.onClick = attrs.onClick;
+        }
+
+        return Component.DOM("tr")(props, (cols.length > 0)  ? cols : []);
 
     }
 

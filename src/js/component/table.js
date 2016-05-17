@@ -9,9 +9,7 @@ export default Component.createClass({
         var rows = [];
 
         for (var i=0; i < attrs.rows.length; i++) {
-            rows.push(TableRow({
-                cols : attrs.rows[i]
-            }));
+            rows.push(TableRow(attrs.rows[i]));
         }
 
         var tableContents = [];
