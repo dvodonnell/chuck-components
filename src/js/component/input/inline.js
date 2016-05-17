@@ -12,6 +12,8 @@ export default Component.createClass({
 
     render : function(attrs, children, state) {
 
+        console.log('rendering...', state);
+
         var self = this;
 
         var innerEl = null;
