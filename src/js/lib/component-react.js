@@ -13,9 +13,9 @@ export default {
             var classDef = {
                 render : function() {
                     var self = this;
-                    return _def.render(this.props, this.props.children, this.state).apply({
+                    return _def.render.apply({
                         setState : self.setState
-                    });
+                    }, [this.props, this.props.children, this.state]);
                 }
             };
             if (_def.getInitialState) {
