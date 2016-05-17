@@ -4,28 +4,42 @@ import Container from './../container.js';
 
 export default Component.createClass({
 
-    render : function(attrs, children) {
+    getInitialState : function() {
+        return {
+            editing : false
+        };
+    },
 
-        var elInput = Input({
+    render : function(attrs, children, state) {
+
+        var self = this;
+
+        var innerEl = null;
+
+        if (state.editable) {
+
+            innerEl = Input({
                 value : attrs.value || '',
                 state : {
                     editable : false
                 }
-            }),
-            elP = Component.DOM('p')({
+            });
+
+        } else {
+
+            innerEl = Component.DOM('p')({
                 onClick : function() {
-                    elInput.setState({
-                        editable : true
+                    self.setState({
+                        editing : true
                     });
                 }
             }, attrs.value);
 
+        }
+
         return Container({
             className : 'inlineInput-container'
-        }, [
-            elInput,
-            elP
-        ]);
+        }, [innerEl]);
 
     }
 
