@@ -1,5 +1,6 @@
 import Component from 'lib.component';
 import TableHeader from './table-header.js';
+import TableRow from './table-row.js';
 
 export default Component.createClass({
 
