@@ -12,6 +12,7 @@ export default {
         var cl = (function(_def){
             var classDef = {
                 render : function() {
+                    console.log('rendering...');
                     return _def.render.apply(this, [this.props, this.props.children, this.state]);
                 }
             };
