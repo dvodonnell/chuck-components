@@ -10,22 +10,16 @@ export default Component.createClass({
         };
     },
 
-    render : function(attrs, children, state) {
-
-        console.log('inner rendering...', state);
-        console.log('inner rendering var...', this.state);
+    render : function(attrs, children) {
 
         var self = this;
 
         var innerEl = null;
 
-        if (state.editable) {
+        if (state.editing) {
 
             innerEl = Input({
-                value : attrs.value || '',
-                state : {
-                    editable : false
-                }
+                value : attrs.value || ''
             });
 
         } else {
