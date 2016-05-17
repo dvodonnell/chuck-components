@@ -18,6 +18,7 @@ export default Component.createClass({
 
         if (attrs.onClick) {
             props.onClick = attrs.onClick;
+            props.className += ' clickable';
         }
 
         return Component.DOM("tr")(props, (cols.length > 0)  ? cols : []);
