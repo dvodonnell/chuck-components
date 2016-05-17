@@ -1,6 +1,6 @@
 {
   "name": "chuck-components",
-  "version": "1.0.25",
+  "version": "1.0.26",
   "description": "A pretty good set of components",
   "main": "index.js",
   "scripts": {
