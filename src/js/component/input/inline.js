@@ -16,7 +16,7 @@ export default Component.createClass({
 
         var innerEl = null;
 
-        if (state.editing) {
+        if (this.state.editing) {
 
             innerEl = Input({
                 value : attrs.value || ''
