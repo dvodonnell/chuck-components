@@ -48,7 +48,11 @@ export default Component.createClass({
                         if (attrs.service.onSelect) {
                             attrs.service.onSelect(e.target.id);
                         }
-                        self.setState({selectedLabel:e.target.innerHTML, selectedId : e.target.id, results:[]});
+                        if (attrs.multi) {
+                            self.setState({selectedLabel:'', selectedId : null, results:[]});
+                        } else {
+                            self.setState({selectedLabel:e.target.innerHTML, selectedId : e.target.id, results:[]});
+                        }
                     }
                 }, this.state.results[i].label));
             }
