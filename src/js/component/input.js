@@ -20,6 +20,7 @@ export default Component.createClass({
         }
 
         if (attrs.onKeyPress) {
+            console.log(this);
             pars['onKeyPress'] = attrs.onKeyPress;
         }
 
