@@ -10,14 +10,13 @@ export default {
         }
 
         var cl = (function(_def){
-            var classDef = {
-                render : function() {
-                    return _def.render.apply(this, [this.props, this.props.children]);
-                }
-            };
-            if (_def.getInitialState) {
-                classDef['getInitialState'] = _def.getInitialState;
+            var classDef = {};
+            for (var funcKey in _def) {
+                classDef[funcKey] = _def[funcKey];
             }
+            classDef['render'] = function() {
+                return _def.render.apply(this, [this.props, this.props.children]);
+            };
             return React.createClass(classDef);
         })(def);
 

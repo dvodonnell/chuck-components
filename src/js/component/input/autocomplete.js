@@ -10,6 +10,10 @@ export default Component.createClass({
         };
     },
 
+    handleChange : function() {
+
+    },
+
     render : function(attrs, children) {
 
         var self = this;
@@ -19,10 +23,8 @@ export default Component.createClass({
         var minSearchLength = attrs.minSearchLength || 1;
 
         els.push(Input({
-            onKeyPress : function(e) {
-                if (attrs.service && attrs.service.doSearch) {
-                    console.log(e);
-                }
+            onChange : function(e) {
+                console.log(e);
             }
         }));
 

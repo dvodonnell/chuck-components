@@ -11,17 +11,10 @@ export default Component.createClass({
             placeholder : attrs.placeholder || ''
         };
 
-        if (attrs.onKeyUp) {
-            pars['onkeyup'] = attrs.onKeyUp;
-        }
-
         if (attrs.onChange) {
-            pars['onchange'] = attrs.onChange;
-        }
-
-        if (attrs.onKeyPress) {
-            console.log(this);
-            pars['onKeyPress'] = attrs.onKeyPress;
+            pars['onChange'] = function(e) {
+                attrs.onChange(e.target.value);
+            }
         }
 
         return Component.DOM("input")(pars);
