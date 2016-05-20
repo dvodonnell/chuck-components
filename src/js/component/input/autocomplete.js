@@ -9,7 +9,8 @@ export default Component.createClass({
     getInitialState : function() {
         return {
             results : [],
-            selectedLabel : ''
+            selectedLabel : '',
+            selectedId : null
         };
     },
 
@@ -20,12 +21,12 @@ export default Component.createClass({
         var els = [];
 
         var minSearchLength = attrs.minSearchLength || 1;
-        
+
         els.push(Input({
             value : this.state.selectedLabel,
             onChange : function(e) {
                 if (attrs.service && attrs.service.doSearch) {
-                    if (e.length > 0) {
+                    if (e.length >= minSearchLength) {
                         attrs.service.doSearch(e, function(results){
                             self.setState({results:results});
                         });
@@ -47,7 +48,7 @@ export default Component.createClass({
                         if (attrs.service.onSelect) {
                             attrs.service.onSelect(e.target.id);
                         }
-                        self.setState({selectedLabel:e.target.innerHTML});
+                        self.setState({selectedLabel:e.target.innerHTML, selectedId : e.target.id, results:[]});
                     }
                 }, this.state.results[i].label));
             }
@@ -55,6 +56,12 @@ export default Component.createClass({
                 items : links
             }));
         }
+
+        els.push(Input({
+            type : 'hidden',
+            name : attrs.name,
+            value : this.state.selectedId
+        }));
 
         return Container({
             className : 'inputAutocomplete-container'
