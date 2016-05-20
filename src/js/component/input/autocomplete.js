@@ -19,7 +19,7 @@ export default Component.createClass({
         var minSearchLength = attrs.minSearchLength || 1;
 
         els.push(Input({
-            onKeyDown : function(e) {
+            onKeyPress : function(e) {
                 if (attrs.service && attrs.service.doSearch) {
                     console.log(e);
                 }

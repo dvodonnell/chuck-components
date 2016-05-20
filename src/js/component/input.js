@@ -19,6 +19,10 @@ export default Component.createClass({
             pars['onchange'] = attrs.onChange;
         }
 
+        if (attrs.onKeyPress) {
+            pars['onKeyPress'] = attrs.onKeyPress;
+        }
+
         return Component.DOM("input")(pars);
 
     }
