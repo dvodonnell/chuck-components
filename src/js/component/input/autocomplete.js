@@ -21,6 +21,8 @@ export default Component.createClass({
 
         var minSearchLength = attrs.minSearchLength || 1;
 
+        console.log(this.state);
+
         els.push(Input({
             value : this.state.selectedLabel,
             onChange : function(e) {
@@ -47,8 +49,6 @@ export default Component.createClass({
                         if (attrs.service.onSelect) {
                             attrs.service.onSelect(e.target.id);
                         }
-                        console.log(e.target);
-                        console.log(e.target.innerHTML);
                         self.setState({selectedLabel:e.target.innerHTML});
                     }
                 }, this.state.results[i].label));
