@@ -1,17 +1,14 @@
 import Component from 'lib.component';
 import Input from './../input.js';
+import List from './../list.js';
 import Container from './../container.js';
 
 export default Component.createClass({
 
     getInitialState : function() {
         return {
-            editing : false
+            results : []
         };
-    },
-
-    handleChange : function() {
-
     },
 
     render : function(attrs, children) {
@@ -24,9 +21,23 @@ export default Component.createClass({
 
         els.push(Input({
             onChange : function(e) {
-                console.log(e);
+                if (attrs.service && attrs.service.doSearch) {
+                    if (e.length > 0) {
+                        attrs.service.doSearch(e, function(results){
+                            self.setState({results:results});
+                        });
+                    } else {
+                        self.setState({results:[]});
+                    }
+                }
             }
         }));
+
+        if (this.state.results.length > 0) {
+            els.push(List({
+                items : this.state.results
+            }));
+        }
 
         return Container({
             className : 'inputAutocomplete-container'
