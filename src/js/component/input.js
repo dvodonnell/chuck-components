@@ -17,6 +17,10 @@ export default Component.createClass({
             }
         }
 
+        if (attrs.value) {
+            pars['value'] = attrs.value;
+        }
+
         return Component.DOM("input")(pars);
 
     }

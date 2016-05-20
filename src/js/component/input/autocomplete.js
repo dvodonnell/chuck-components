@@ -20,9 +20,7 @@ export default Component.createClass({
         var els = [];
 
         var minSearchLength = attrs.minSearchLength || 1;
-
-        console.log(this.state);
-
+        
         els.push(Input({
             value : this.state.selectedLabel,
             onChange : function(e) {
