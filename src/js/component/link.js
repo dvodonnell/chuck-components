@@ -6,7 +6,8 @@ export default Component.createClass({
 
         var props = {
             href : attrs.href || '#',
-            className : attrs.className || ''
+            className : attrs.className || '',
+            id : attrs.id || ''
         };
 
         if (attrs.onClick) {

@@ -39,7 +39,13 @@ export default Component.createClass({
             for (var i = 0; i < this.state.results.length; i++) {
                 links.push(Link({
                     href : '#',
-                    id : this.state.results[i].id
+                    id : this.state.results[i].id,
+                    onClick : function(e){
+                        e.preventDefault();
+                        if (attrs.service.onSelect) {
+                            attrs.service.onSelect(e.target.id);
+                        }
+                    }
                 }, this.state.results[i].label));
             }
             els.push(List({
