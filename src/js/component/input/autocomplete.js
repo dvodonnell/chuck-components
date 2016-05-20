@@ -8,7 +8,8 @@ export default Component.createClass({
 
     getInitialState : function() {
         return {
-            results : []
+            results : [],
+            selectedLabel : ''
         };
     },
 
@@ -21,6 +22,7 @@ export default Component.createClass({
         var minSearchLength = attrs.minSearchLength || 1;
 
         els.push(Input({
+            value : this.state.selectedLabel,
             onChange : function(e) {
                 if (attrs.service && attrs.service.doSearch) {
                     if (e.length > 0) {
@@ -45,6 +47,7 @@ export default Component.createClass({
                         if (attrs.service.onSelect) {
                             attrs.service.onSelect(e.target.id);
                         }
+                        self.setState({selectedLabel:e.target.innerHTML});
                     }
                 }, this.state.results[i].label));
             }
