@@ -11,7 +11,7 @@ export default Component.createClass({
         };
 
         if (attrs.onClick) {
-            props['onclick'] = function(e){
+            props['onClick'] = function(e){
                 e.preventDefault();
                 attrs.onClick(e);
             };
