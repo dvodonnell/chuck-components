@@ -1,6 +1,7 @@
 import Component from 'lib.component';
 import Input from './../input.js';
 import List from './../list.js';
+import Link from './../link.js';
 import Container from './../container.js';
 
 export default Component.createClass({
@@ -34,8 +35,15 @@ export default Component.createClass({
         }));
 
         if (this.state.results.length > 0) {
+            var links = [];
+            for (var i = 0; i < this.state.results.length; i++) {
+                links.push(Link({
+                    href : '#',
+                    id : this.state.results[i].id
+                }, this.state.results[i].label));
+            }
             els.push(List({
-                items : this.state.results
+                items : links
             }));
         }
 
